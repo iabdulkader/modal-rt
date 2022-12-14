@@ -1,0 +1,75 @@
+{
+  "name": "@iabdulkader/react-popup-modal",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./headless": {
+      "types": "./headless/index.d.ts",
+      "import": "./headless/index.mjs",
+      "require": "./headless/index.js"
+    }
+  },
+  "files": [
+    "headless",
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "rm -rf dist && tsup",
+    "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
+    "link": "pnpm link ./site/node_modules/react && pnpm link ./site/node_modules/react-dom",
+    "size": "size-limit"
+  },
+  "keywords": [
+    "react",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "5.5 KB"
+    },
+    {
+      "path": "dist/index.mjs",
+      "limit": "5 KB"
+    },
+    {
+      "path": "headless/index.js",
+      "limit": "2 KB"
+    },
+    {
+      "path": "headless/index.mjs",
+      "limit": "2 KB"
+    }
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "size-limit": "^8.1.0",
+    "tslib": "^2.4.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "dependencies": {
+    "goober": "^2.1.11"
+  }
+}
