@@ -1,8 +1,9 @@
 import { styled, keyframes } from 'goober';
 import React from 'react';
+import modal from '../../core/modal';
 import { WrapperPropTypes } from "./WrapperPropTypes";
 
-const ModalWrapper = ({ id, children, close, animation = true, customTrigger = false }: WrapperPropTypes) => {
+const ModalWrapper = ({ id, children, animation = true, customTrigger = false }: WrapperPropTypes) => {
     
     type WrapperProps = {
         animation?: boolean;
@@ -73,6 +74,11 @@ const ModalWrapper = ({ id, children, close, animation = true, customTrigger = f
         height: 75%;
         width: 75%;
     `;
+
+    const close = () => {
+        modal.close(id);
+    };
+
     
     return (
     <>

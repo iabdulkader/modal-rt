@@ -13,9 +13,4 @@ export default defineConfig([
     entry: ['src/index.ts'],
     outDir: 'dist',
   },
-  {
-    ...commonConfig,
-    entry: ['src/headless/index.ts'],
-    outDir: 'headless',
-  },
 ]);

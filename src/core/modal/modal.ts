@@ -1,31 +1,28 @@
-import { ReactElement } from 'react';
 import { dispatch, useStore} from '../store';
-import wrapper from '../../hooks/wrapper';
-import { CreateElementOutType, ModalActionType, Options } from './ModalTypes';
+import { CreateElementOutType, Modal, ModalActionType, ModalHandler, ModalInputType, Options, Renderable, ValueOrFunction } from './ModalTypes';
 import { ActionType } from '../store/StoreTypes';
 
-type ModalHandler = (node: ReactElement, options?: Options) => void;
+
 
 const uid = (() => {
     let i = 0;
     return () => `${i++}`;
 })();
 
-const createElement = (node: ReactElement, options?: Options): CreateElementOutType  => {
-    const key = uid();
+const createModal = (modal: ModalInputType, options?: Options): Modal  => {
+    const id = uid();
 
-    const modal: JSX.Element = wrapper(node, key, options);
-    return { modal, key };
+    return { modal, id, animation: options?.animation, customTrigger: options?.customTrigger, ...options };
 };
 
 const createHandler = (type?: ModalActionType): ModalHandler => (node, options) => {
-                const { modal, key } = createElement(node, options);
+                const modal = createModal(node, options);
                 dispatch({ type: ActionType.ADD_MODAL, modal });
-
-                return key;
+               
+                return modal.id;
             };
 
-const modal = (modal: JSX.Element, options?: Options) => createHandler('add')(modal, options);
+const modal = (modal: ModalInputType, options?: Options) => createHandler('add')(modal, options);
 
 modal.close = (id?: string): void => {
     dispatch({

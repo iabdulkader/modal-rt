@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Modal } from '../modal/ModalTypes';
 import { Action, ActionType, ModalsType } from './StoreTypes';
 
 export const reducer = (state: ModalsType, action: Action): ModalsType => {
@@ -19,7 +20,7 @@ export const reducer = (state: ModalsType, action: Action): ModalsType => {
 
             return {
                 ...state,
-                modals: state.modals.filter((modal: JSX.Element) => modal.key !== action.id),
+                modals: state.modals.filter((modal: Modal) => modal.id !== action.id),
             };
 
         default:

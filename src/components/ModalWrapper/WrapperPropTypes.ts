@@ -3,5 +3,4 @@ export interface WrapperPropTypes {
     children: React.ReactNode;
     animation?: boolean;
     customTrigger?: boolean;
-    close: () => void;
 }
