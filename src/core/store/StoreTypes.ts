@@ -1,12 +1,13 @@
+import { Modal } from "../modal/ModalTypes";
 
 export type ModalsType = {
-    modals: JSX.Element[];
+    modals: Modal[];
 }
 
 export type Action =
     | {
           type: ActionType.ADD_MODAL;
-          modal: JSX.Element;
+          modal: Modal;
       }
     | {
           type: ActionType.REMOVE_MODAL;
