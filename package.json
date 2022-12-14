@@ -1,5 +1,5 @@
 {
-  "name": "react-popup-modal",
+  "name": "modal-rt",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -29,16 +29,18 @@
   "scripts": {
     "watch": "tsup --watch",
     "build": "rm -rf dist && tsup",
-    "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
-    "link": "pnpm link ./site/node_modules/react && pnpm link ./site/node_modules/react-dom",
     "size": "size-limit"
   },
   "keywords": [
     "react",
     "typescript"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Abdul Kader <abdulkadernow@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iabdulkader/modal-rt.git"
+  },
   "size-limit": [
     {
       "path": "dist/index.js",
