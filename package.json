@@ -22,6 +22,8 @@
   "scripts": {
     "watch": "tsup --watch",
     "build": "rm -rf dist && tsup",
+    "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
+    "link": "pnpm link ./site/node_modules/react && pnpm link ./site/node_modules/react-dom",
     "size": "size-limit"
   },
   "keywords": [
