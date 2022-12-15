@@ -1,5 +1,5 @@
 import React from "react"
-import { Modal, resolveValue } from "../../core/modal/ModalTypes"
+import { resolveValue } from "../../core/modal/ModalTypes"
 import { ModalContainerProps } from "./ModalContainerProps"
 
 export const ModalContainer: React.FC<ModalContainerProps> = ({ modal, children }) => {

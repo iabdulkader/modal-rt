@@ -12,13 +12,14 @@ export const Modal: React.FC = () => {
         <Fragment>
             {modals.map((m) => {   
                 return <ModalWrapper 
-                    animation={m?.animation}
-                    customTrigger={m?.customTrigger}
-                    id={m?.id}
-                >
+                            animation={m?.animation}
+                            customTrigger={m?.customTrigger}
+                            id={m?.id}
+                        >
 
-                <ModalContainer modal={m} />
-                </ModalWrapper>
+                            <ModalContainer modal={m} />
+
+                        </ModalWrapper>
             })}
         </Fragment>);
 };
