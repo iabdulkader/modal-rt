@@ -67,6 +67,7 @@
     "react-dom": ">=16"
   },
   "dependencies": {
-    "goober": "^2.1.11"
+    "goober": "^2.1.11",
+    "goober-autoprefixer": "^1.2.3"
   }
 }

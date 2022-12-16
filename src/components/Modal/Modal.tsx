@@ -6,7 +6,6 @@ import ModalWrapper from '../ModalWrapper';
 
 export const Modal: React.FC = () => {
     const { modals } = useModal(); 
-    
 
     return (
         <Fragment>

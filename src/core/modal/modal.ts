@@ -1,5 +1,5 @@
-import { dispatch, useStore} from '../store';
-import { CreateElementOutType, Modal, ModalActionType, ModalHandler, ModalInputType, Options, Renderable, ValueOrFunction } from './ModalTypes';
+import { dispatch } from '../store';
+import { Modal, ModalActionType, ModalHandler, ModalInputType, Options } from './ModalTypes';
 import { ActionType } from '../store/StoreTypes';
 
 

@@ -1,13 +1,19 @@
 import { styled, keyframes } from 'goober';
-import React from 'react';
+import React, { useEffect } from 'react';
 import modal from '../../core/modal';
 import { WrapperPropTypes } from "./WrapperPropTypes";
 
-const ModalWrapper = ({ id, children, animation = true, customTrigger = false }: WrapperPropTypes) => {
-    
+const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger = false }: WrapperPropTypes) => {
+
     type WrapperProps = {
         animation?: boolean;
+        id?: string;
     };
+
+    type OverLayProps = {
+        id?: string;
+    };
+
 
     const zoom = keyframes`
         0% {
@@ -24,14 +30,14 @@ const ModalWrapper = ({ id, children, animation = true, customTrigger = false }:
         }
     `;
 
-    const OverLay = styled('div')`
+    const OverLay = styled('div')<OverLayProps>`
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        z-index: 11;
+        ${({ id }) => `z-index: ${11+Number(id)}`};
     `;
 
     const Wrapper = styled('div')<WrapperProps>`
@@ -43,7 +49,7 @@ const ModalWrapper = ({ id, children, animation = true, customTrigger = false }:
         display: flex;
         flex-direction: column;
         max-height: 100%;
-        z-index: 12;
+        ${({ id }) => `z-index: ${12+Number(id)}`};
         scale: 1;
         transition: all 300ms ease-in-out;
         ${({ animation }) => animation && `animation: ${zoom} 250ms linear`};
@@ -78,6 +84,9 @@ const ModalWrapper = ({ id, children, animation = true, customTrigger = false }:
         padding: 0;
         height: 75%;
         width: 75%;
+        background: transparent;
+        border: none;
+        outline: none;
     `;
 
     const close = () => {
@@ -87,7 +96,7 @@ const ModalWrapper = ({ id, children, animation = true, customTrigger = false }:
     
     return (
     <>
-        <OverLay onClick={close}></OverLay>
+        <OverLay id={id} onClick={close}></OverLay>
 
         <Wrapper id={id} animation={animation}>
 
@@ -113,7 +122,7 @@ const ModalWrapper = ({ id, children, animation = true, customTrigger = false }:
         </Wrapper>
     </>
     )
-}
+});
 
 
 export default ModalWrapper;
