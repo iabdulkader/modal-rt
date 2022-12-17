@@ -37,7 +37,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        ${({ id }) => `z-index: ${11+Number(id)}`};
+        ${({ id }) => `z-index: ${999+Number(id)}`};
     `;
 
     const Wrapper = styled('div')<WrapperProps>`
@@ -49,7 +49,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
         display: flex;
         flex-direction: column;
         max-height: 100%;
-        ${({ id }) => `z-index: ${12+Number(id)}`};
+        ${({ id }) => `z-index: ${1000+Number(id)}`};
         scale: 1;
         transition: all 300ms ease-in-out;
         ${({ animation }) => animation && `animation: ${zoom} 250ms linear`};
