@@ -30,6 +30,12 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
         }
     `;
 
+    const Parent = styled('div')`
+        position: relative;
+        width: 100%;
+        height: 100%;
+    `
+
     const OverLay = styled('div')<OverLayProps>`
         position: fixed;
         top: 0;
@@ -95,7 +101,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
 
     
     return (
-    <>
+    <Parent>
         <OverLay id={id} onClick={close}></OverLay>
 
         <Wrapper id={id} animation={animation}>
@@ -120,7 +126,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
             {children}
 
         </Wrapper>
-    </>
+    </Parent>
     )
 });
 

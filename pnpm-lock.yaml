@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@types/react': ^18.0.26
   goober: ^2.1.11
+  goober-autoprefixer: ^1.2.3
   react: ^18.2.0
   react-dom: '>=16'
   size-limit: ^8.1.0
@@ -12,6 +13,7 @@ specifiers:
 
 dependencies:
   goober: 2.1.11
+  goober-autoprefixer: 1.2.3
 
 devDependencies:
   '@types/react': 18.0.26
@@ -493,6 +495,10 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
+
+  /goober-autoprefixer/1.2.3:
+    resolution: {integrity: sha512-89n8rlTrprAGewDnStDt5J9N0PBnyhYJReI0J/220ApeSJ8ufHJ64K2ycZCtI5X7u/JVlySyo1A2NL74HYmcBw==}
+    dev: false
 
   /goober/2.1.11:
     resolution: {integrity: sha512-5SS2lmxbhqH0u9ABEWq7WPU69a4i2pYcHeCxqaNq6Cw3mnrF0ghWNM4tEGid4dKy8XNIAUbuThuozDHHKJVh3A==}
