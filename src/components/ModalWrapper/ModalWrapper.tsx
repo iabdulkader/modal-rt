@@ -1,5 +1,5 @@
 import { styled, keyframes } from 'goober';
-import React, { useEffect } from 'react';
+import React from 'react';
 import modal from '../../core/modal';
 import { WrapperPropTypes } from "./WrapperPropTypes";
 
@@ -32,7 +32,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
 
     const Parent = styled('div')`
         position: relative;
-        width: 100%;
+        min-width: 100vw;
         height: 100%;
     `
 
