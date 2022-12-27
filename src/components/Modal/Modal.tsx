@@ -1,5 +1,4 @@
-import React from 'react';
-import { styled } from 'goober';
+import React, { Fragment } from 'react';
 import useModal  from '../../hooks/store';
 import ModalContainer from '../ModalContainer';
 import ModalWrapper from '../ModalWrapper';
@@ -7,13 +6,8 @@ import ModalWrapper from '../ModalWrapper';
 export const Modal: React.FC = () => {
     const { modals } = useModal(); 
 
-    const ModalDiv = styled('div')`
-        width: 100%;
-        height: 100%;
-    `;
-
     return (
-        <ModalDiv>
+        <Fragment>
             {modals.map((m) => {   
                 return <ModalWrapper 
                             animation={m?.animation}
@@ -25,5 +19,5 @@ export const Modal: React.FC = () => {
 
                         </ModalWrapper>
             })}
-        </ModalDiv>);
+        </Fragment>);
 };
