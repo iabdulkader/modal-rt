@@ -10,7 +10,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
         id?: string;
     };
 
-    type OverLayProps = {
+    type IndexProps = {
         id?: string;
     };
 
@@ -27,7 +27,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
         }
     `;
 
-    const Parent = styled('div')<OverLayProps>`
+    const Parent = styled('div')<IndexProps>`
         position: fixed;
         top: 0;
         left: 0;

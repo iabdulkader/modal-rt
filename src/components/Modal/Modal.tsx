@@ -13,6 +13,7 @@ export const Modal: React.FC = () => {
                             animation={m?.animation}
                             customTrigger={m?.customTrigger}
                             id={m?.id}
+                            key={m?.id}
                         >
 
                             <ModalContainer modal={m} />
