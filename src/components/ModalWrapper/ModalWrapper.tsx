@@ -3,7 +3,7 @@ import React from 'react';
 import modal from '../../core/modal';
 import { WrapperPropTypes } from "./WrapperPropTypes";
 
-const ModalWrapper = React.memo(({ id, children, animation = "true", customTrigger = false }: WrapperPropTypes) => {
+const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger = false }: WrapperPropTypes) => {
 
     type WrapperProps = {
         animation?: string;
@@ -62,7 +62,7 @@ const ModalWrapper = React.memo(({ id, children, animation = "true", customTrigg
         max-height: 100%;
         scale: 1;
         transition: all 300ms ease-in-out;
-        ${({ animation }) => animation && `animation: ${zoom} 250ms linear`};
+        ${({ animation }) => animation === "true" && `animation: ${zoom} 250ms linear`};
     `;
 
     const ButtonDiv = styled('div')`

@@ -1,6 +1,6 @@
 export interface WrapperPropTypes {
     id?: string;
     children: React.ReactNode;
-    animation?: string;
+    animation?: boolean;
     customTrigger?: boolean;
 }
