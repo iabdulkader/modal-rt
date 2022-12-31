@@ -3,10 +3,10 @@ import React from 'react';
 import modal from '../../core/modal';
 import { WrapperPropTypes } from "./WrapperPropTypes";
 
-const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger = false }: WrapperPropTypes) => {
+const ModalWrapper = React.memo(({ id, children, animation = "true", customTrigger = false }: WrapperPropTypes) => {
 
     type WrapperProps = {
-        animation?: boolean;
+        animation?: string;
         id?: string;
     };
 
@@ -110,7 +110,7 @@ const ModalWrapper = React.memo(({ id, children, animation = true, customTrigger
       <OverLay id={id} onClick={close} />
 
       <Container>
-        <Wrapper id={id} animation={animation}>
+        <Wrapper id={id} animation={animation.toString()}>
         
 
             {customTrigger === false ? 

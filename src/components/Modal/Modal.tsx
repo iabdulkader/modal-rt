@@ -10,7 +10,7 @@ export const Modal: React.FC = () => {
         <Fragment>
             {modals.map((m) => {   
                 return <ModalWrapper 
-                            animation={m?.animation}
+                            animation={m?.animation!.toString()}
                             customTrigger={m?.customTrigger}
                             id={m?.id}
                             key={m?.id}
