@@ -16,5 +16,5 @@ export type Action =
 
 export enum ActionType {
   ADD_MODAL,
-  REMOVE_MODAL,
+  REMOVE_MODAL
 }

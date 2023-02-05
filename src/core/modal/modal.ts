@@ -4,7 +4,7 @@ import {
   ModalActionType,
   ModalHandler,
   ModalInputType,
-  Options,
+  Options
 } from "./ModalTypes";
 import { ActionType } from "../store/StoreTypes";
 
@@ -21,18 +21,19 @@ const createModal = (modal: ModalInputType, options?: Options): Modal => {
     id,
     animation: options?.animation,
     customTrigger: options?.customTrigger,
-    ...options,
+    ...options
   };
 };
 
-const createHandler =
-  (type?: ModalActionType): ModalHandler =>
-  (node, options) => {
-    const modal = createModal(node, options);
-    dispatch({ type: ActionType.ADD_MODAL, modal });
+const createHandler = (type?: ModalActionType): ModalHandler => (
+  node,
+  options
+) => {
+  const modal = createModal(node, options);
+  dispatch({ type: ActionType.ADD_MODAL, modal });
 
-    return modal.id;
-  };
+  return modal.id;
+};
 
 const modal = (modal: ModalInputType, options?: Options) =>
   createHandler("add")(modal, options);
@@ -40,7 +41,7 @@ const modal = (modal: ModalInputType, options?: Options) =>
 modal.close = (id?: string): void => {
   dispatch({
     type: ActionType.REMOVE_MODAL,
-    id,
+    id
   });
 };
 

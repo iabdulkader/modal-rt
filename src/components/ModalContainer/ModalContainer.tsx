@@ -10,7 +10,7 @@ export const ModalContainer: React.FC<ModalContainerProps> = React.memo(
       <>
         {typeof children === "function" ? (
           children({
-            modalContent,
+            modalContent
           })
         ) : (
           <>{modalContent}</>

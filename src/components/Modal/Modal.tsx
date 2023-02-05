@@ -8,7 +8,7 @@ export const Modal: React.FC = () => {
 
   return (
     <Fragment>
-      {modals.map((m) => {
+      {modals.map(m => {
         return (
           <ModalWrapper
             animation={m?.animation}

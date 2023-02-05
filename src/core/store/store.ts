@@ -7,20 +7,20 @@ export const reducer = (state: ModalsType, action: Action): ModalsType => {
     case ActionType.ADD_MODAL:
       return {
         ...state,
-        modals: [action.modal, ...state.modals],
+        modals: [action.modal, ...state.modals]
       };
 
     case ActionType.REMOVE_MODAL:
       if (action.id === undefined) {
         return {
           ...state,
-          modals: [],
+          modals: []
         };
       }
 
       return {
         ...state,
-        modals: state.modals.filter((modal: Modal) => modal.id !== action.id),
+        modals: state.modals.filter((modal: Modal) => modal.id !== action.id)
       };
 
     default:
@@ -35,7 +35,7 @@ let memoryState: ModalsType = { modals: [] };
 export const dispatch = (action: Action) => {
   memoryState = reducer(memoryState, action);
 
-  listeners.forEach((listener) => {
+  listeners.forEach(listener => {
     listener(memoryState);
   });
 };
@@ -55,6 +55,6 @@ export const useStore = (): ModalsType => {
 
   return {
     ...state,
-    modals: state.modals,
+    modals: state.modals
   };
 };
