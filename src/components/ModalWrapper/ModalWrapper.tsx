@@ -8,27 +8,31 @@ const ModalWrapper = React.memo(
     id,
     children,
     animation = true,
-    customTrigger = false
+    customTrigger = false,
   }: WrapperPropTypes) => {
-    type WrapperProps = {
-      animation?: string;
-      id?: string;
-    };
-
     const close = () => {
       modal.close(id);
     };
 
     return (
-      <div className="parent" style={{ zIndex: `${999 + Number(id)}` }} id={id}>
-        <div className="overlay" id={id} onClick={close} />
+      <div
+        className="modal_rt_parent"
+        style={{ zIndex: `${999 + Number(id)}` }}
+        id={id}
+      >
+        <div className="modal_rt_overlay" id={id} onClick={close} />
 
-        <div className="container">
-          <div className={`wrapper ${animation && "animation"}`} id={id}>
+        <div className="modal_rt_container">
+          <div
+            className={`modal_rt_wrapper ${
+              animation ? "modal_rt_animation" : ""
+            }`}
+            id={id}
+          >
             {customTrigger === false ? (
-              <div className="btnDiv">
-                <div className="btnCountainer">
-                  <button className="btn" onClick={close}>
+              <div className="modal_rt_btnDiv">
+                <div className="modal_rt_btnCountainer">
+                  <button className="modal_rt_btn" onClick={close}>
                     <svg viewBox="0 0 512 512">
                       <path
                         fill="#fff"
