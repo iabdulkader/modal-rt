@@ -1,1 +1,1 @@
-export { dispatch, useStore } from './store';
+export { dispatch, useStore } from "./store";

@@ -3,5 +3,3 @@ import modal from "./core/modal";
 
 export { modal };
 export default modal;
-
- 

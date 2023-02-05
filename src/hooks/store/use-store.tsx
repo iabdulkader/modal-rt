@@ -1,6 +1,6 @@
-import { useStore } from '../../core/store';
+import { useStore } from "../../core/store";
 
 export const useModal = () => {
-    const { modals } = useStore();
-    return { modals };
+  const { modals } = useStore();
+  return { modals };
 };
