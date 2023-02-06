@@ -16,7 +16,7 @@ const ModalWrapper = React.memo(
 
       const timeOut = setTimeout(() => {
         modal.close(id);
-      }, 300);
+      }, 240);
 
       return () => {
         clearTimeout(timeOut);

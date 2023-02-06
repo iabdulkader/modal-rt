@@ -1,0 +1,95 @@
+Arguments: 
+  /home/abdulkader/.nvm/versions/node/v18.12.1/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /tmp/yarn--1675700395306-0.16090285275787508:/home/abdulkader/Desktop/modal-rt/node_modules/.bin:/home/abdulkader/.config/yarn/link/node_modules/.bin:/home/abdulkader/.yarn/bin:/home/abdulkader/.nvm/versions/node/v18.12.1/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/abdulkader/.nvm/versions/node/v18.12.1/lib/node_modules/npm/bin/node-gyp-bin:/home/abdulkader/.nvm/versions/node/v18.12.1/bin/node_modules/npm/bin/node-gyp-bin:/home/abdulkader/.bun/bin:/home/abdulkader/.nvm/versions/node/v18.12.1/bin:/home/abdulkader/.bun/bin:/home/abdulkader/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/abdulkader/.cache/yarn/v6/npm-camelcase-6.3.0-5685b95eb209ac9c0c177467778c9c84df58ba9a-integrity/node_modules/camelcase/index.d.ts' -> '/home/abdulkader/Desktop/modal-rt/node_modules/tsdx/node_modules/camelcase/index.d.ts'
+
+npm manifest: 
+  {
+    "name": "modal-rt",
+    "version": "0.18.0",
+    "description": "",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "module": "dist/index.esm.js",
+    "private": false,
+    "files": [
+      "dist"
+    ],
+    "engines": {
+      "node": ">=10"
+    },
+    "scripts": {
+      "watch": "tsdx --watch",
+      "build": "rm -rf dist && tsdx build --format cjs,esm",
+      "lint": "tsdx lint --fix",
+      "setup": "yarn && cd site && yarn && cd .. && yarn link",
+      "link": "yarn link ./site/node_modules/react && yarn link ./site/node_modules/react-dom",
+      "size": "size-limit",
+      "analyze": "size-limit --why"
+    },
+    "keywords": [
+      "react",
+      "typescript"
+    ],
+    "author": "Abdul Kader <abdulkadernow@gmail.com>",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/iabdulkader/modal-rt.git"
+    },
+    "size-limit": [
+      {
+        "path": "dist/index.js",
+        "limit": "5.5 KB"
+      },
+      {
+        "path": "dist/index.mjs",
+        "limit": "5 KB"
+      },
+      {
+        "path": "headless/index.js",
+        "limit": "2 KB"
+      },
+      {
+        "path": "headless/index.mjs",
+        "limit": "2 KB"
+      }
+    ],
+    "devDependencies": {
+      "@size-limit/preset-small-lib": "^8.1.2",
+      "@types/react": "^18.0.26",
+      "goober-autoprefixer": "^1.2.3",
+      "postcss": "^8.4.21",
+      "react": "^18.2.0",
+      "rollup-plugin-postcss": "^4.0.2",
+      "size-limit": "^8.1.0",
+      "tsdx": "^0.14.1",
+      "tslib": "^2.4.1",
+      "tsup": "^6.5.0",
+      "typescript": "^4.9.4"
+    },
+    "peerDependencies": {
+      "react": ">=16",
+      "react-dom": ">=16"
+    },
+    "dependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

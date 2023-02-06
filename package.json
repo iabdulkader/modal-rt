@@ -16,8 +16,8 @@
     "watch": "tsdx --watch",
     "build": "rm -rf dist && tsdx build --format cjs,esm",
     "lint": "tsdx lint --fix",
-    "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
-    "link": "pnpm link ./site/node_modules/react && pnpm link ./site/node_modules/react-dom",
+    "setup": "yarn && cd site && yarn && cd .. && yarn link",
+    "link": "yarn link ./site/node_modules/react && yarn link ./site/node_modules/react-dom",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
@@ -52,14 +52,12 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^8.1.2",
     "@types/react": "^18.0.26",
-    "goober-autoprefixer": "^1.2.3",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^8.1.0",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.1",
-    "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
