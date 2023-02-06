@@ -10,8 +10,17 @@ const ModalWrapper = React.memo(
     animation = true,
     customTrigger = false,
   }: WrapperPropTypes) => {
+    const [modalState, setModalState] = React.useState(false);
     const close = () => {
-      modal.close(id);
+      setModalState(true);
+
+      const timeOut = setTimeout(() => {
+        modal.close(id);
+      }, 300);
+
+      return () => {
+        clearTimeout(timeOut);
+      };
     };
 
     return (
@@ -25,8 +34,8 @@ const ModalWrapper = React.memo(
         <div className="modal_rt_container">
           <div
             className={`modal_rt_wrapper ${
-              animation ? "modal_rt_animation" : ""
-            }`}
+              animation ? "modal_rt_animationIn" : ""
+            } ${modalState ? "modal_rt_animationOut" : ""}`}
             id={id}
           >
             {customTrigger === false ? (

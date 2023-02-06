@@ -13,7 +13,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "watch": "tsup --watch",
+    "watch": "tsdx --watch",
     "build": "rm -rf dist && tsdx build --format cjs,esm",
     "lint": "tsdx lint --fix",
     "setup": "pnpm i && cd site && pnpm i && cd .. && pnpm run link",
