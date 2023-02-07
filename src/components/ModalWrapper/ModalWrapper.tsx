@@ -12,12 +12,15 @@ const ModalWrapper = React.memo(
   }: WrapperPropTypes) => {
     const [modalState, setModalState] = React.useState(false);
     const close = () => {
-      setModalState(true);
+      let timeOut: NodeJS.Timeout;
 
-      const timeOut = setTimeout(() => {
-        modal.close(id);
-      }, 240);
+      if (animation) {
+        setModalState(true);
 
+        timeOut = setTimeout(() => {
+          modal.close(id);
+        }, 240);
+      }
       return () => {
         clearTimeout(timeOut);
       };
