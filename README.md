@@ -1,4 +1,6 @@
-### <div align="center">Modal-RT</div>
+# <div align="center">Modal-RT</div>
+
+<div align="center">Simple and very lightweight react modal made with typescript.</div>
 
 <br>
 <br>
