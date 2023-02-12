@@ -1,7 +1,8 @@
 <div align="center">Modal-RT</div>
 <br>
 <br>
-### Mount ```<Modal />``` Component in any component (Root component prefered)
+
+### Mount `<Modal />` Component in any component (Root component prefered)
 
 ### `src/index.tsx`
 
