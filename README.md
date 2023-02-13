@@ -61,7 +61,7 @@ export default Component;
 
 | Api             | Type                                  | Value               | Description                                                                                                 |
 | --------------- | ------------------------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
-| modal()         | `string`, `JSX.Element` or `function` | Default `null`      | Text or React component which to be showed in the modal                                                     |
+| modal()         | `string`, `JSX.Element` or `function` | Default `null`      | Text or React component which to be showed in the modal.                                                    |
 | modal.close(id) | `string`                              | default `undefined` | Close a modal by providing modal id as parameter. If `id` id is `undefined` it will close all active modal. |
 
 ## Options for modal api
