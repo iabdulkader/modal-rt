@@ -5,6 +5,7 @@ module.exports = {
     config.plugins.push(
       postcss({
         plugins: [],
+        modules: true,
       })
     );
     return config;
