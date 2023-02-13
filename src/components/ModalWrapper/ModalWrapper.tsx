@@ -1,7 +1,7 @@
 import React from "react";
 import modal from "../../core/modal";
 import { WrapperPropTypes } from "./WrapperPropTypes";
-import "./ModalWrapper.css";
+import styles from "./ModalWrapper.module.css";
 
 const ModalWrapper = React.memo(
   ({
@@ -25,23 +25,23 @@ const ModalWrapper = React.memo(
 
     return (
       <div
-        className="modal_rt_parent"
+        className={styles.parent}
         style={{ zIndex: `${999 + Number(id)}` }}
         id={id}
       >
-        <div className="modal_rt_overlay" id={id} onClick={close} />
+        <div className={styles.overlay} id={id} onClick={close} />
 
-        <div className="modal_rt_container">
+        <div className={styles.container}>
           <div
-            className={`modal_rt_wrapper ${
-              animation ? "modal_rt_animationIn" : ""
-            } ${modalState ? "modal_rt_animationOut" : ""}`}
+            className={`${styles.wrapper} ${
+              animation ? `${styles.animationIn}` : ""
+            } ${modalState ? `${styles.animationOut}` : ""}`}
             id={id}
           >
             {customTrigger === false ? (
-              <div className="modal_rt_btnDiv">
-                <div className="modal_rt_btnCountainer">
-                  <button className="modal_rt_btn" onClick={close}>
+              <div className={styles.btnDiv}>
+                <div className={styles.btnCountainer}>
+                  <button className={styles.btn} onClick={close}>
                     <svg viewBox="0 0 512 512">
                       <path
                         fill="#fff"
