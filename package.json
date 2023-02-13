@@ -23,7 +23,10 @@
   },
   "keywords": [
     "react",
-    "typescript"
+    "typescript",
+    "modal",
+    "react-modal",
+    "typesafe"
   ],
   "author": "Abdul Kader <abdulkadernow@gmail.com>",
   "license": "MIT",
